@@ -2,6 +2,6 @@
 /mysql
 /rstudio/.config
 /rstudio/.local
+/rstudio/workspace
 /rstudio/.*
-/rstudio/*
 .vscode
