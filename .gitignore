@@ -4,3 +4,5 @@
 /rstudio/workspace
 /rstudio/.*
 .vscode
+/redis
+/mongo
