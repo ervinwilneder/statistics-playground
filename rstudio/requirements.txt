@@ -33,4 +33,5 @@ emdbook
 rrcov
 ICSNP
 rrcov
+dunn.test
 BiocManager
