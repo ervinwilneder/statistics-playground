@@ -9,7 +9,6 @@ services:
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=admin
-    restart: always
     volumes:
       - db-data:/var/lib/mysql
       - ./mysql:/home/
@@ -20,7 +19,6 @@ services:
   metabase:
     image: metabase/metabase
     container_name: metabase
-    restart: always
     environment:
       - MB_DB_FILE=/metabase-data/metabase.db
       - MB_DB_TYPE=mysql
@@ -41,7 +39,6 @@ services:
     build: ./rstudio
     image: statistics-playground/rstudio
     container_name: rstudio
-    restart: always
     ports:
       - 8787:8787
     environment:
@@ -55,7 +52,6 @@ services:
   jupyter:
     image: jupyter/datascience-notebook
     container_name: jupyter
-    restart: always
     ports:
       - 8888:8888
       - 4200:4200
@@ -76,7 +72,6 @@ services:
   redis:
     image: redis/redis-stack
     container_name: redis
-    restart: always
     ports:
       - 6379:6379
       - 8001:8001
@@ -89,7 +84,6 @@ services:
   mongo:
     image: mongo
     container_name: mongo
-    restart: always
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=pass
@@ -106,7 +100,6 @@ services:
   mongoadmin:
     image: mongo-express
     container_name: mongo-express
-    restart: on-failure
     depends_on:
       mongo:
         condition: service_healthy
@@ -124,7 +117,6 @@ services:
   mindsdb:
     image: mindsdb/mindsdb
     container_name: mindsdb
-    restart: always
     ports:
       - 47334:47334
       - 47335:47335
@@ -133,7 +125,6 @@ services:
     build: ./fastapi
     container_name: fastapi
     image: statistics-playground/fastapi
-    restart: always
     ports:
       - 80:80
     expose:
