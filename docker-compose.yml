@@ -121,6 +121,24 @@ services:
     ports:
       - 8081:8081
 
+  mindsdb:
+    image: mindsdb/mindsdb
+    container_name: mindsdb
+    restart: always
+    ports:
+      - 47334:47334
+      - 47335:47335
+
+  fastapi:
+    build: ./fastapi
+    container_name: fastapi
+    image: statistics-playground/fastapi
+    restart: always
+    ports:
+      - 80:80
+    expose:
+      - 80
+    
 volumes:
   db-data:
   mb-data:
