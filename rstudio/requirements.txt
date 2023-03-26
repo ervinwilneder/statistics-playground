@@ -35,3 +35,6 @@ ICSNP
 rrcov
 dunn.test
 BiocManager
+
+
+# https://github.com/r-spatial/sf/ to install sf & rgdal packages (https://gist.github.com/dncgst/111b74066eaea87c92cdc5211949cd1e)
